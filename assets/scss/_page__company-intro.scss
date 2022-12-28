@@ -1,0 +1,48 @@
+.section__problem-solving {
+  padding-top: 19.2rem;
+  position: relative;
+
+  p {
+    padding-top: 2.4rem;
+  }
+
+  .problem-inquiry {
+    margin-top: 36.2rem;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 64rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 54rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 8rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section__strengths {
+  @include responsive-section-gap;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section__keywords {
+  @include responsive-section-gap;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section__partners {
+  @include responsive-section-gap;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section__culture {
+  @include responsive-section-gap;
+}

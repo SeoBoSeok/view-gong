@@ -1,0 +1,201 @@
+/* ANCHOR HEADER ------------------------------------------------------------ */
+.header {
+  @include header-base-layout();
+  @include header-content-layout();
+  min-width: $content-min-width;
+
+  .logo {
+    z-index: $zindex-modal;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-image: url("../img/logo_gongstar--black.svg");
+    width: 20rem;
+    height: 1.8rem;
+    display: inline-flex;
+  }
+
+  .nav-trigger__main {
+    @include icon-button(2.8, 2.8, "../../assets/img/icon-hamburger-alt--black.svg");
+  }
+
+  /* ANCHOR HEADER - LANDING PAGE */
+  .page__landing & {
+    @include header-landing-layout();
+
+    .logo {
+      background-image: url("../../assets/img/logo_gongstar.svg");
+    }
+
+    .nav-trigger__main {
+      @include icon-button(2.8, 2.8, "../../assets/img/icon-hamburger-alt.svg");
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-width: $content-min-width;
+      padding-left: $global-margin__x;
+      padding-right: $global-margin__x;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+}
+
+/* ANCHOR NAV CONTAINER MAIN ------------------------------------------------ */
+@mixin main-nav-height-transition() {
+  transition-property: height, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  filter: blur();
+}
+
+@keyframes show-nav-main-item {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.nav-container__main {
+  position: fixed;
+  background-color: $gstar-gray-900;
+  background-image: url('../img/header/header-nav-bg-v2.svg');
+  background-repeat: no-repeat;
+  background-position: top 0rem right 0;
+  left: 0;
+  top: 0;
+  min-width: $content-min-width;
+  width: 100vw;
+  height: 0;
+  z-index: $zindex-modal;
+  display: none;
+  opacity: 0.5;
+  @include main-nav-height-transition;
+
+  &.visible {
+    height: 100vh;
+    opacity: 1;
+    @include main-nav-height-transition;
+  }
+
+  .nav__main-header {
+    @include header-base-layout();
+    @include header-landing-layout();
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .logo {
+      img {
+        height: 1.8rem;
+      }
+    }
+
+    .nav-close-btn__main {
+      @include icon-button(2.8, 2.8, "../../assets/img/icon-close.svg");
+    }
+  }
+
+  .nav__main {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: $global-margin__x;
+    margin-top: 18.6rem;
+
+    > a {
+      color: $white;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      opacity: 0;
+      filter: blur();
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .menu-title__english {
+        font-size: 2.6rem;
+        font-weight: bold;
+        margin-right: 1.6rem;
+        font-family: "Titillium Web", sans-serif;
+      }
+
+      .menu-title__korean {
+        opacity: 0.5;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 14rem;
+
+      > a {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .menu-title__english {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+
+  .nav__project-request-button {
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 0;
+    margin-right: $global-margin__x;
+    margin-top: calc($global-margin__y + 5rem);
+
+    img {
+      @include media-breakpoint-down(sm) {
+        width: 2.8rem;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .nav__social {
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    margin-right: $global-margin__x;
+    margin-bottom: $global-margin__y;
+
+    @include media-breakpoint-down(sm) {
+      right: auto;
+      left: 0;
+      margin-right: 0;
+      margin-left: $global-margin__x;
+      margin-bottom: calc(#{$global-margin__y} + 5rem);
+    }
+  }
+
+  .nav__main-copyright {
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    margin-left: $global-margin__x;
+    margin-bottom: $global-margin__y;
+  }
+}

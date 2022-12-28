@@ -1,0 +1,761 @@
+/* -------------------------------------------------------------------------- */
+
+.social-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  > * {
+    margin-bottom: 1.2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .phone-number {
+    color: $white;
+    font-size: 1.3rem;
+
+    .key {
+      margin-right: 0.2rem;
+      display: inline-flex;
+    }
+
+    .value {
+      letter-spacing: 0.2rem;
+      display: inline-flex;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .section__social-for-content & {
+    align-items: flex-end;
+
+    .phone-number {
+      color: $black;
+    }
+
+    @include media-breakpoint-down(sm) {
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-flow: row nowrap;
+
+    > * {
+      margin-bottom: 0;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.icon-button {
+  &__right-arrow-circle {
+    @include icon-button(
+      3.2,
+      3.2,
+      "../img/icon-arrows/bi_arrow-right-circle--black.svg"
+    );
+  }
+
+  &__download {
+    @include icon-button(
+      2.4,
+      2.4,
+      "../img/icon/heroicons-outline_document-download.svg"
+    );
+
+    .section__social-for-content & {
+      @include icon-button(
+        2.4,
+        2.4,
+        "../img/icon/heroicons-outline_document-download--black.svg"
+      );
+    }
+  }
+
+  &__instagram {
+    @include icon-button(2.4, 2.4, "../img/icon/akar-icons_instagram-fill.svg");
+
+    .section__social-for-content & {
+      @include icon-button(
+        2.4,
+        2.4,
+        "../img/icon/akar-icons_instagram-fill--black.svg"
+      );
+    }
+  }
+
+  &__kakao {
+    @include icon-button(2.4, 2.4, "../img/icon/social-icon__kakaotalk.svg");
+    .section__social-for-content & {
+      @include icon-button(
+        2.4,
+        2.4,
+        "../img/icon/social-icon__kakaotalk--black.svg"
+      );
+    }
+  }
+}
+
+/* ANCHOR 페이지 타이틀 ----------------------------------------------------------- */
+
+$page-title-size--default: 9.7rem;
+$page-title-size--mobile: 5rem;
+
+.current-page-title__eng {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 6.4rem;
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 4.4rem;
+  }
+  
+  // background-repeat: no-repeat;
+  // background-position: top 0 left 0;
+  // background-size: auto $page-title-size--default;
+  // width: 100%;
+  // height: $page-title-size--default;
+  // text-indent: -9999px;
+
+  // .page__company-intro & {
+  //   background-image: url("../img/page-title/page-title__company.svg");
+  // }
+
+  // .page__portfolio & {
+  //   background-image: url("../img/page-title/page-title__portfolio.svg");
+  // }
+
+  // .page__contact-us & {
+  //   background-image: url("../img/page-title/page-title__contact-us.svg");
+  // }
+
+  // .page__customers & {
+  //   background-image: url("../img/page-title/page-title__customers.svg");
+  // }
+
+  // .page__project-request & {
+  //   background-image: url("../img/page-title/page-title__project-request.svg");
+  // }
+
+  // @include media-breakpoint-down(sm) {
+  //   background-size: auto $page-title-size--mobile;
+  //   height: $page-title-size--mobile;
+  // }
+}
+
+/* -------------------------------------------------------------------------- */
+
+h1 {
+  .main__content & {
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  .main__content .section__page-summary & {
+    font-size: 4.2rem;
+    margin-top: 12.8rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 3.2rem;
+      margin-top: 6.8rem;
+    }
+  }
+}
+
+h2 {
+  .main__content & {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+}
+
+p {
+  .main__content & {
+    font-size: 1.8rem;
+    max-width: 68rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+}
+
+h3 {
+  .main__content .section-title & {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+  .main__content .section__request-form & {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}
+
+h4 {
+  .main__content .section__page-sub-title & {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-top: $section-content-gap;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+hr.section-divider {
+  min-width: calcu(#{$content-min-width} - ($content-outer-margin__x * 2));
+  position: absolute;
+  top: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: calc(100% - ($content-outer-margin__x * 2));
+  background-color: $black;
+  margin: 0;
+  padding: 0;
+  max-width: $content-max-width;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.problem-inquiry-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+
+  > img {
+    margin-right: 0.8rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.tonal-button {
+  border-radius: $border-radius-full;
+  padding: 1.2rem 3.2rem;
+  background-color: $gstar-gray-200;
+  font-weight: bold;
+  font-size: 1.6rem;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-position: center right 3.2rem;
+  background-repeat: no-repeat;
+  border: 0;
+  color: $black;
+
+  &.--right-arrow {
+    background-image: url("../img/icon-arrows/ri_arrow-right-line--black.svg");
+    padding-right: calc(3.2rem + 2.4rem + 0.8rem);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section-background-image {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  height: 100%;
+  max-width: 54.9rem;
+  max-height: 41rem;
+  position: absolute;
+  z-index: -1;
+
+  .section__problem-solving & {
+    top: 42rem;
+    right: 0;
+    background-image: url("../img/image/image__company-intro-main.png");
+
+    @include responsive-bg-image {
+      background-image: url("../img/image/image__company-intro-main@2x.png");
+    }
+
+    @include media-breakpoint-down(md) {
+      top: 46rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+      top: 50rem;
+    }
+  }
+}
+
+/* ANCHOR 카드 ---------------------------------------------------------------- */
+
+.gstar-card {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 5.4rem;
+  padding-bottom: 6.2rem;
+  border: 1px solid $gstar-gray-400;
+  border-radius: $gstar-border-radius-lg;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  word-break: keep-all;
+
+  .gstar-card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 4.8rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-top: 4.8rem;
+  }
+}
+
+/* ANCHOR 강조 키워드 ------------------------------------------------------------ */
+
+.gstar-keyword-group {
+  gap: 4.8rem;
+
+  @include media-breakpoint-down(sm) {
+    gap: 3.6rem;
+  }
+}
+
+.gstar-keyword {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  word-break: keep-all;
+  max-width: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  .gstar-keyword-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+/* ANCHOR 이미지 카드 ------------------------------------------------------------ */
+
+.image-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  width: 100%;
+  padding-left: 5.4rem;
+  padding-right: 5.4rem;
+  padding-top: 4.8rem;
+  aspect-ratio: 404 / 548;
+  border-radius: $gstar-border-radius-lg;
+
+  &-bg__hand {
+    @extend .image-card;
+    background-image: url("../img/image/image-bg__hand.jpg");
+  }
+
+  &-bg__meeting {
+    @extend .image-card;
+    background-image: url("../img/image/image-bg__meeting.jpg");
+  }
+
+  &-bg__pot {
+    @extend .image-card;
+    background-image: url("../img/image/image-bg__pot.jpg");
+  }
+
+  &-bg__tree {
+    @extend .image-card;
+    background-image: url("../img/image/image-bg__tree.jpg");
+    grid-column: span 2;
+    aspect-ratio: 862 / 548;
+
+    @include media-breakpoint-down(sm) {
+      grid-column: 1;
+      aspect-ratio: 404 / 548;
+    }
+  }
+
+  &-bg__office {
+    @extend .image-card;
+    background-image: url("../img/image/image-bg__office.jpg");
+  }
+
+  .image-card-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+}
+
+.image-card-group {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5.4rem;
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.6rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
+/* ANCHOR 필터용 버튼그룹 ---------------------------------------------------------- */
+
+.button-group__filter {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 1.6rem;
+
+  .filter-btn {
+    background-color: $white;
+    border: 0;
+    font-size: 2.4rem;
+    border-bottom: 3px solid transparent;
+    padding: 0.8rem;
+
+    &.active {
+      border-bottom-color: $black;
+      font-weight: bold;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/* ANCHOR 페이지네이션 ------------------------------------------------------------ */
+
+.pagination {
+  justify-content: center;
+}
+
+.page-item {
+  .page-link {
+    padding: 1rem 1.6rem;
+  }
+}
+
+/* ANCHOR 게시판 --------------------------------------------------------------- */
+
+.gstar-board-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
+}
+
+.gstar-board-list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid $black;
+  padding: 2.6rem 2.4rem;
+  word-break: keep-all;
+
+  &:last-child {
+    border-bottom: 1px solid $black;
+  }
+
+  &-date {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 7.2rem;
+
+    .day {
+      font-size: 3.2rem;
+      font-weight: bold;
+    }
+
+    .month-year {
+      font-size: 2rem;
+    }
+  }
+
+  &-title {
+    font-size: 2rem;
+    margin-right: 3.6rem;
+  }
+
+  &-button {
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &-date {
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0;
+    }
+  }
+}
+
+/* ANCHOR FORM -------------------------------------------------------------- */
+
+.form-group-collection {
+  margin-top: 3.2rem;
+}
+
+.form-group {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 0.4rem;
+
+    .sub-text {
+      color: $gstar-red-400;
+      font-size: 1.4rem;
+      font-weight: normal;
+    }
+  }
+
+  &.form-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    input[type="checkbox"] {
+      + label {
+        margin-left: 0.8rem;
+        font-weight: normal;
+      }
+    }
+  }
+
+  pre {
+    background-color: $gstar-gray-200;
+    border-radius: $border-radius-sm;
+    padding: 2.4rem;
+    max-height: 40rem;
+    overflow: auto;
+    white-space: pre-line;
+  }
+}
+
+.form-divider {
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+  border-color: $black;
+}
+
+.form-submit {
+  margin-top: 6.4rem;
+  text-align: center;
+
+  .btn {
+    border-radius: $border-radius-full;
+    padding: 1.2rem 3.2rem;
+    background-color: $white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-position: center right 3.2rem;
+    background-repeat: no-repeat;
+    border: 1px solid $black;
+    color: $black;
+  
+    &.--right-arrow {
+      background-image: url("../img/icon-arrows/ri_arrow-right-line--black.svg");
+      padding-right: calc(3.2rem + 2.4rem + 0.8rem);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.contact-list {
+  h3 + & {
+    margin-top: 1.6rem;
+  }
+
+  .contact-list-item {
+    .key {
+      font-weight: bold;
+    }
+  }
+}
+
+/* ANCHOR BUTTONS ----------------------------------------------------------- */
+
+.button-rect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: white;
+  padding: 8px;
+}
+
+.content-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: white;
+
+  &.--next {
+    margin-left: auto;
+  }
+
+  &.--prev {
+    margin-right: auto;
+  }
+
+  i {
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 3rem;
+    height: 6rem;
+
+    &.icon-arrow-line-prev {
+      background-image: url('../img/icon-arrows/button-nav-prev.svg');
+      margin-right: 1rem;
+    }
+  
+    &.icon-arrow-line-next {
+      background-image: url('../img/icon-arrows/button-nav-next.svg');
+      margin-left: 1rem;
+      order: 2;
+    }
+
+    @include media-breakpoint-down(lg) {
+      height: 3rem; 
+      width: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.content-read-page-wrapper {
+  padding-top: map-get($spacers, 8);
+  padding-bottom: map-get($spacers, 8);
+  margin-top: map-get($spacers, 10);
+  border-top: 3px solid black;
+
+  @include media-breakpoint-down(xs) {
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5);
+  }
+}
+
+.content-read-page-title {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-bottom: 5.4rem;
+
+  h2 {
+    font-size: 3.6rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 2.6rem;
+    }
+  }
+
+  small {
+    font-size: 1.8rem;
+    opacity: 0.5;
+    
+    @include media-breakpoint-down(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 3.6rem;
+  }
+}
+
+.content-read-page-body {
+  max-width: 96rem;
+  display: grid;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+  
+  img {
+    margin-bottom: 4.2rem;
+  }
+
+  p {
+    margin-bottom: 4.2rem;
+  }
+}
+
+/* ANCHOR LOGO GALLERY ------------------------------------------------------ */
+
+.logo-gallery {
+  padding: $spacer * 4.8;
+  justify-items: center;
+  align-items: center;
+  border-radius: 3.6rem;
+  background-color: $gray-200;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacer * 3.6;
+    border-radius: 1.8rem;
+  }
+}
+
+.logo-gallery-item {
+  img {
+    max-height: 4rem;
+    display: inline-flex;
+  }
+}

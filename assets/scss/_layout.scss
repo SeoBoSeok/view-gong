@@ -1,0 +1,168 @@
+html, 
+body {
+  width: 100%;
+}
+
+.container__page {
+  min-width: $content-min-width;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  @include  set-content-min-height();
+
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  background-size: 100% auto;
+  background-color: transparent;
+
+  /* -------------------------------------------------------------------------- */ 
+
+  .page__company-intro & {
+    background-image: url('../img/image/image__line-deco-01.svg');
+    background-size: 90.8rem auto;
+    background-position: top -20rem right -6rem;
+
+    @media (min-width: 1920px) {
+      background-size: 110.8rem auto;
+      background-position: top -26rem right 0 ;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-size: 70.8rem auto;
+      background-position: top -14rem right -16rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 50.8rem auto;
+      background-position: top -11.5rem right -11rem;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  .page__portfolio & {
+    background-image: url('../img/image/image__line-deco-02.svg');
+    background-size: 70.8rem auto;
+    background-position: top -22rem right -10rem;
+
+    @media (min-width: 1920px) {
+      background-size: 80.8rem auto;
+      background-position: top -26rem right -4rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-size: 60.8rem auto;
+      background-position: top -16rem right -16rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 40.8rem auto;
+      background-position: top -11rem right -11rem;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  .page__customers & {
+    background-image: url('../img/image/image__line-deco-03.svg');
+    background-size: 90.8rem auto;
+    background-position: top -30rem right -20rem ;
+
+    @media (min-width: 1920px) {
+      background-size: 110.8rem auto;
+      background-position: top -36rem right -20rem ;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-size: 70.8rem auto;
+      background-position: top -26rem right -16rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 50.8rem auto;
+      background-position: top -14rem right -14rem;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  .page__project-request & {
+    background-image: url('../img/image/image__line-deco-04.svg');
+    background-size: 90.8rem auto;
+    background-position: top -20rem right -6rem ;
+
+    @media (min-width: 1920px) {
+      background-size: 110.8rem auto;
+      background-position: top -26rem right 0 ;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-size: 70.8rem auto;
+      background-position: top -16rem right -16rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 50.8rem auto;
+      background-position: top -11rem right -11rem;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  .page__contact-us & {
+    background-image: url('../img/image/image__line-deco-05.svg');
+    background-size: 90.8rem auto;
+    background-position: top -30rem right -6rem ;
+
+    @media (min-width: 1920px) {
+      background-size: 110.8rem auto;
+      background-position: top -36rem right 0 ;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-size: 70.8rem auto;
+      background-position: top -26rem right -16rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 50.8rem auto;
+      background-position: top -21rem right -11rem;
+    }
+  }
+}
+
+footer {
+  .main__content & {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    @include media-breakpoint-down(sm) {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      gap: 1.6rem;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+.main__content {
+  width: calc(100% - (#{$content-outer-margin__x} * 2));
+  padding: $content-inner-margin__y__top $content-inner-margin__x $content-inner-margin__y;
+  margin: $content-outer-margin__y $content-outer-margin__x;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  background-size: 100% auto;
+  background-color: transparent;
+  max-width: $content-max-width;
+
+  &--border {
+    border: 1px solid $black;
+    border-radius: 3.2rem;
+  }
+}

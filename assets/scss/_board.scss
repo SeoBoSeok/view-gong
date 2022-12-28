@@ -1,0 +1,154 @@
+@mixin four-column-card { 
+    width: calc(100% / 4 - (#{$spacer} * 2) + ((#{$spacer} * 2) / 4));
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+
+    &:nth-of-type(1),
+    &:nth-of-type(4n + 1) {
+        margin-left: 0;
+    }
+
+    &:nth-of-type(4n) {
+        margin-right: 0;
+    }
+}
+
+.board-list {
+    list-style: none;
+    padding: 0;
+
+    .board-item {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        border-bottom: 1px solid $gray-300;
+
+        [class^="item__"] {
+            flex-basis: 10%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+
+        .item {
+            &__checkbox {
+                flex-basis: 4%;
+            }
+
+            &__number {
+                flex-basis: 6%;
+            }
+
+            &__title {
+                flex-basis: 50%;
+                flex-grow: 1;
+                text-align: left;
+                justify-content: flex-start;
+
+                a {
+                    color: $black;
+                }
+            }
+        }
+    
+        &__title {
+            @extend .board-item;
+            border-top: 1px solid $gray-200;
+
+            .item {
+                &__title {
+                    text-align: center;
+                    justify-content: center;
+                    
+                    a {
+                        color: $black;
+                        cursor: text;
+                        
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.board-list__gallery {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .board-item {
+        list-style: none;
+        padding: 1rem;
+        margin-right: $spacer;
+        margin-left: $spacer;
+        @include four-column-card();
+        @include box-shadow($box-shadow-sm);
+
+        .item {
+            &__thumbnail {
+                flex-flow: 100%;
+                height: 170px;
+                border: 1px solid #{$gray-400};
+                margin-bottom: $spacer * 0.75;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &__title {
+                margin-bottom: $spacer * 0.75;
+
+                a {
+                    color: $black;
+                }
+            }
+
+            &__author,
+            &__date {
+                font-size: 0.875rem;
+            }
+
+            &__author {
+                float: left;
+            }
+
+            &__date {
+                float: right;
+            }
+        }
+    }
+}
+
+.board-options {
+    margin-bottom: $spacer * 2;
+}
+
+.board-controls {
+    margin-top: $spacer * 2;
+    margin-bottom: $spacer * 2;
+}
+
+.board-pagination {
+    .pagination {
+        .page-item {
+            .page-link {
+                color: $black;
+            }
+        }
+    }
+}

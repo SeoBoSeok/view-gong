@@ -1,0 +1,85 @@
+@mixin set-content-min-height() {
+  min-height: $content-min-height;
+
+  @include media-breakpoint-down(sm) {
+    min-height: $content-min-height--mobile;
+  }
+}
+
+@mixin header-base-layout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: $zindex-sticky;
+  width: 100vw;
+}
+
+@mixin header-content-layout {
+  margin: 0;
+  padding-top: $global-margin__y;
+  padding-left: $content-inner-margin__x;
+  padding-right: $content-inner-margin__x;
+  max-width: $content-max-width;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include media-breakpoint-down(lg) {
+    padding-left: $global-margin__x;
+    padding-right: $global-margin__x;
+    left: auto;
+    transform: none;
+  }
+}
+
+@mixin header-landing-layout {
+  padding: 0;
+  margin-top: $global-margin__y;
+  margin-left: $global-margin__x;
+  margin-right: $global-margin__x;
+  max-width: none;
+  left: auto;
+  transform: none;
+  width: calc(100% - ($global-margin__x * 2));
+}
+
+@mixin copyright-layout() {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  margin-left: 5.6rem;
+  margin-bottom: 7.8rem;
+}
+
+@mixin icon-button($width, $height, $url) {
+  border: 0;
+  width: $width + rem;
+  height: $height + rem;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url($url);
+  margin-left: auto;
+}
+
+@mixin responsive-section-gap {
+  padding-top: $section-gap;
+  padding-bottom: $section-gap;
+
+  @include media-breakpoint-down(md) {
+    padding-top: $section-gap * 0.5;
+    padding-bottom: $section-gap * 0.5;
+  }
+}
+
+@mixin responsive-bg-image {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
